@@ -1,0 +1,138 @@
+.searchbar {
+    width: 100%;
+    height: 3rem;
+    background: $background-dark;
+
+    @extend .flex-center;
+
+    &__icon {
+        margin-right: .5rem;
+
+        @extend .flex-center;
+    }
+
+    &__input {
+        background: $color-transparent;
+        height: 2.5rem;
+        font-size: 1rem;
+        padding-left: 1rem;
+
+        @extend .flex-center;
+        @include border-none;
+    }
+}
+
+.description {
+    background: $background-light;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 2rem;
+    h2, p {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.fonctionnement {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 3rem 1.5rem;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    &__btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 20rem;
+        height: 3.8rem;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        background: $background-light;
+        margin-left: 1rem;
+        transform: scale(1);
+        transition: transform 300ms;
+
+        @include btn-shadow;
+        &:hover {
+            transform: scale(1.01);
+            background-color: lighten($color-primary, 35%);
+        }
+        &:hover > .fonctionnement__btn--icon {
+            color: $color-primary;
+        }
+        &--nb {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 2rem;
+            background: $color-primary;
+            font-size: .7rem;
+            color: #fff;
+            margin-left: -.6rem;
+            margin-right: .5rem;
+            @extend .flex-center;
+        }
+        &--icon {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+            color: rgb(121, 121, 121);
+            @extend .flex-center;
+        }
+    }
+}
+
+.restaurants {
+    padding: 3rem 1.5rem;
+    background-color: $background-light;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+    
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 21rem;
+        background-color: #fff;
+        border-radius: 1rem;
+        margin: 1rem;
+        transform: scale(1);
+        transition: all 300ms;
+
+        &:hover {
+            transform: scale(1.01);
+            opacity: .9;
+        }
+
+        @include bloc-shadow();
+
+        img {
+            width: 100%;
+            height: 11rem;
+            object-fit: cover;
+
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        &__desc {
+            display: flex;
+            flex-flow: row wrap;
+            padding: 1rem;
+        }
+
+        p {
+            font-weight: 300;
+        }
+    }
+}
