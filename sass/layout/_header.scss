@@ -1,0 +1,12 @@
+header {
+    text-align: center;
+    position: relative;
+
+    @include bloc-shadow;
+    .fa-arrow-left {
+        left: 20px;
+        top: 25px;
+        color: black;
+        position: absolute;
+    }
+}
