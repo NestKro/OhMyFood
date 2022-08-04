@@ -1,0 +1,33 @@
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-transparent: transparent;
+$color-footer: rgb(48, 48, 48);
+$background-dark: #eaeaea;
+$background-light: #f6f6f6;
+$hover: #f5edff;
+$shadow: #cfcfcf;
+
+/* VARIABLES POUR LES CARDS */
+
+$num-cards: 10;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / $num-cards;
+
+/* VARIABLES POUR LE LOADER */
+
+$num-ball: 3;
+$anim-ball-dur: 800ms;
+$anim-ball-delay: $anim-ball-dur / $num-ball;
+
+/* EXTEND */
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.decoration-none {
+    text-decoration: none;
+}

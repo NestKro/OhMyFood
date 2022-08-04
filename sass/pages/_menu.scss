@@ -1,0 +1,59 @@
+.img-presentation {
+    width: 100%;
+    max-height: 20em;
+    object-fit: cover;
+}
+
+.menu {
+    width: 100%;
+
+    .border-bottom {
+        border-bottom: 3px solid $color-tertiary;
+        width: 12%;
+        h4 {
+            margin-bottom: .3rem;
+        }
+    }
+
+    h2 {
+        font-family: "Shrikhand";
+        font-weight: 400;
+    }
+
+    .btn__like {
+        .like-empty, .like-full {
+            top: 2rem;
+            right: 2rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        width: 100%;
+        position: relative;
+        min-width: 375px;
+        margin-top: -2rem;
+        padding: 1rem;
+        background-color: $background-light;
+        border-radius: 2rem 2rem 0 0;
+
+        &--title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1em;
+        }
+
+        &--select {
+            margin-bottom: 1rem;
+        }
+
+        &--btn-command {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+}

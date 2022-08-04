@@ -1,0 +1,160 @@
+/* BOUTONS DEGRADÉS */
+
+.btn__linear {
+    width: 15rem;
+    padding: 0 1.5rem;
+    height: 3.5rem;
+    border-radius: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+    background: linear-gradient(to bottom right, $color-secondary, $color-primary);
+    transition: all 300ms;
+    @extend .flex-center;
+    @include btn-shadow;
+    &:hover {
+        opacity: .9;
+        @include bloc-shadow;
+    }
+    p {
+        font-size: 1.1rem;
+        color: #fff;
+    }
+}
+
+/* CARTES DANS LES MENUS.html */
+
+.card__plat {
+    display: flex;
+    width: 345px;
+    height: 70px;
+    border-radius: 1rem;
+    margin: 10px 0;
+    background-color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    animation: anim-opacity $anim-dur both;
+    @for $i from 1 through $num-cards {
+        &--#{$i} {
+            animation-delay: $anim-delay * $i;
+        }
+    }
+
+    @include btn-shadow;
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        width: 0;
+        font-size: .9rem;
+        padding: .7rem;
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: .7rem;
+        }
+
+        p {
+            font-size: .9rem;
+        }
+
+        h3, p {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+    &-price {
+        width: 4rem;
+        margin-top: auto;
+        padding: 10px;
+        p {
+            font-weight: bold;
+        }
+    }
+        
+    &-anim {
+        transition: all 500ms ease-in-out;
+        width: 0;
+        background-color: $color-tertiary;
+        color: #fff;
+        align-self: stretch;
+        text-align: center;
+        @extend .flex-center;
+        & .anim-circle {
+            opacity: .8;
+            transition: all 500ms ease-in-out;
+            transform: rotate(180deg);
+        }
+    }
+
+    &:hover {
+        & > .card__plat-anim {
+            width: 60px;
+            & .anim-circle {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+
+@keyframes anim-opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* BOUTONS "NOUVEAU" */
+
+.btn-new {
+    width: auto;
+    padding: .4rem .7rem;
+    border-radius: .3rem;
+    background-color: lighten($color-tertiary, 2%);
+    color: darken($color-tertiary, 40%);
+    font-size: .9rem;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+
+/* BOUTON COEUR */
+
+.btn__like {
+
+    .like-empty, .like-full {
+        position: absolute;
+        right: 1rem;
+    }
+
+    &:hover {
+        cursor: pointer;
+        .like-empty {
+            opacity: 0;
+        }
+        .like-full {
+            opacity: 1;
+        }
+    }
+
+    .like-empty {
+        transition: opacity 500ms ease-in-out;
+    }
+
+    .like-full.fa-heart {
+        display: block;
+        background: -webkit-linear-gradient(bottom left, #FF79DA 30%, #9656DC 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

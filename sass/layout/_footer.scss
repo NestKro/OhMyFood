@@ -1,0 +1,33 @@
+.footer {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: $color-footer;
+    color: white;
+
+    &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: .4rem;
+
+        i {
+            margin-right: .5rem;
+            @extend .flex-center;
+        }
+
+        .fa-utensils {
+            margin-right: .7rem;
+        }
+    }
+
+    h3 {
+        font-family: "Shrikhand";
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: white;
+        margin-bottom: .5rem;
+    }
+}
