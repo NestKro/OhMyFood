@@ -467,7 +467,7 @@ header .fa-arrow-left {
   width: 100%;
   margin-bottom: 2rem;
 }
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 790px) {
   .restaurants .card  {
     width: 100vw;
   }
